@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/mini-gatsbyv2-material-kit-react`,
+  pathPrefix: `/nav`,
   siteMetadata: {
     title: 'Gatsby Default Starter',
   },
@@ -9,11 +9,17 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-sass',
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'gatsby-starter-default',
         short_name: 'starter',
-        start_url: '/',
+        start_url: '/nav/',
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',

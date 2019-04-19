@@ -8,8 +8,11 @@ import { List, ListItem, withStyles } from "@material-ui/core";
 
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
-
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import footerStyle from "assets/jss/material-kit-react/components/footerStyle.jsx";
+import { Link } from "gatsby";
+import SvgIcon from '@material-ui/core/SvgIcon';
+import './style.css'
 
 function Footer({ ...props }) {
   const { classes, whiteFont } = props;
@@ -21,62 +24,45 @@ function Footer({ ...props }) {
     [classes.a]: true,
     [classes.footerWhiteFont]: whiteFont
   });
+ 
   return (
-    <footer className={footerClasses}>
-      <div className={classes.container}>
-        <div className={classes.left}>
-          <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/"
-                className={classes.block}
-                target="_blank"
-              >
-                Creative Tim
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/presentation"
-                className={classes.block}
-                target="_blank"
-              >
-                About us
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="http://blog.creative-tim.com/"
-                className={classes.block}
-                target="_blank"
-              >
-                Blog
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/license"
-                className={classes.block}
-                target="_blank"
-              >
-                Licenses
-              </a>
-            </ListItem>
-          </List>
-        </div>
-        <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
-          <a
-            href="https://www.creative-tim.com"
-            className={aClasses}
-            target="_blank"
-          >
-            Creative Tim
-          </a>{" "}
-          for a better web.
-        </div>
-      </div>
+    <footer className="footer">
+          <Link to={"/login-page"} className="col" activeClassName="active">
+            <span>
+              <AccessAlarmIcon/>
+            </span>
+            <p id="text">Docs</p>
+          </Link>
+          <Link to={"/login-page"} className="col" activeClassName="active">
+            <span>
+              <AccessAlarmIcon/>
+            </span>
+            <p id="text">Docs</p>
+          </Link>
+          <Link to={"/landing-page"} className="col" activeClassName="active">
+            <span>
+             <AccessAlarmIcon/>
+            </span>            
+            <p>Tutorial</p>
+          </Link>
+          <Link to={"/profile-page"} className="col" activeClassName="active">
+            <span>
+              <AccessAlarmIcon/>
+            </span>
+            <p>plugins</p>
+          </Link>
+          <Link to={"/new"} className="col" activeClassName="active">
+            <span>
+              <AccessAlarmIcon/>
+            </span>           
+            <p>Blog</p>
+          </Link>
+          <Link to={"/new1"} className="col" activeClassName="active">
+            <span>
+              <AccessAlarmIcon/>
+            </span>
+            <p>Showcase</p>
+          </Link>
     </footer>
   );
 }
